@@ -1,0 +1,36 @@
+body{
+    background-color: #181C14;
+    color: white;
+    padding: 0px;
+    margin: 0px;
+}
+h1{
+    padding: 0%;
+    margin: 0%;
+}
+nav{
+    text-align: center;
+    background-color: #1a1f15;
+    color: white;
+    padding-top: 3vw;
+    padding-bottom: 3vw;
+}
+a{
+    color: white;
+    text-decoration: none;
+    font-family: 'Poppins';
+}
+a:hover{
+    color: rgb(128, 129, 54);
+}
+
+#nav-1{
+    display: inline-block;
+    text-align: center;
+    width: 49%;
+}
+#nav-2{
+    display: inline-block;
+    text-align: center;
+    width: 50%;
+}

@@ -10,7 +10,7 @@ server.set('view engine','ejs')
 //Server main file 
 server.set('views',path.join(__dirname,'views'))
 // Processing html files
-server.set(express.urlencoded({extended:true}))
+server.use(express.urlencoded({extended:true}))
 // Creating the routes
 server.use(Router)
 

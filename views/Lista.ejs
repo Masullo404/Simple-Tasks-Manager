@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=list.listname%></title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <%- include('C:\\Users\\CNT\\Desktop\\Full Stacks\\server\\views\\parts\\header.ejs') %>
+
+    <div style="text-align: center; padding-top: 4vw;">
+      <h1><%= list.listname %></h1>
+    </div>
+
+    <div class="new-list-div">
+        <form action="/Listas/<%=list.listname%>" method="post">
+            <input type="text" name="new_task_input" id="new-task-input">
+            <button id="confirm-new-task" type="submit">Confirmar</button>
+        </form>
+    </div>
+
+    <div class="all-tasks">
+        <ul class="ul-li-listas">
+            <% if(list.tasks.length >=1){list.tasks.forEach((task)=>{ %>
+            <li id="li-listas" class="<%=task%>"><%= task %></li>
+                <div class="div-excluir-botao">
+                    <a href="/Listas/<%=list.listname%>/<%=task%>/excluir"><button id="excluir">Excluir tarefa</button></a>
+                </div>
+                <div class="div-concluir-botao">
+                    <button id="Concluir" class="<%=task%>">Concluir tarefa</button>
+                </div>
+            <% })}%>
+        </ul>
+    </div>
+    
+    <%- include('C:\\Users\\CNT\\Desktop\\Full Stacks\\server\\views\\parts\\footer.ejs') %>
+
+</body>
+    <script>
+        const botoes = document.querySelectorAll('#Concluir')
+        botoes.forEach(botao => 
+        botao.addEventListener('click',()=>{
+            const classe= botao.className.replace(/[ ]/g,'.')
+            document.querySelectorAll(`#li-listas.${classe}`)[0].classList.add('Tarefa-concluida')
+        }))
+    </script>
+</html>

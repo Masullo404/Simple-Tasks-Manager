@@ -4,8 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nova Lista</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <%-include('./views/parts/header.ejs')%>
+    <%-include('C:\\Users\\CNT\\Desktop\\Full Stacks\\server\\views\\parts\\header.ejs')%>
+    <div style="text-align: center; padding-top: 4vw;">
+        <h1>Veja todas as listas</h1>
+    </div>
+    <form action="/NovaLista" method="post">
+        <div class="new-list-div">
+            <input type="text" name="newlist" id="new-list-input">
+            <button type="submit" id="confirm-new-list">Confirmar</button>
+        </div>
+    </form>
+    <%-include('C:\\Users\\CNT\\Desktop\\Full Stacks\\server\\views\\parts\\footer.ejs')%>
 </body>
 </html>

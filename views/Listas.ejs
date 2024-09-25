@@ -3,9 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Listas de Tarefas</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <%- include('./views/parts/header.ejs') %>
+    <%- include('C:\\Users\\CNT\\Desktop\\Full Stacks\\server\\views\\parts\\header.ejs') %>
+    <div style="text-align: center; padding-top: 4vw;">
+        <h1>Veja todas as listas</h1>
+    </div>
+        <div class="new-list-div">
+            <form action="/Listas" method="post">
+                <input type="text" name="newlist" id="new-list-input">
+                <button id="confirm-new-list" type="submit">Confirmar</button>
+            </form>
+        </div>  
+    <div class="all-lists">
+        <ul class="ul-li-listas">
+            <%tasksList.forEach((list)=>{ %>
+            <li id="li-listas"><a href="Listas/<%=list.listname%>"> <%= list.listname %> </a></li>
+                <div class="div-excluir-botao">
+                    <button id="excluir"><a href="Listas/<%=list.listname%>/excluir">Excluir lista</a></button>
+                </div>
+            <% }) %>
+        </ul>
+    </div>
+    <%- include('C:\\Users\\CNT\\Desktop\\Full Stacks\\server\\views\\parts\\footer.ejs') %>
 </body>
 </html>
